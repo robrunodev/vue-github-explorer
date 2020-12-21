@@ -11,28 +11,33 @@
       <header>
         <img :src="repository.owner.avatar_url" :alt="repository.owner.login" />
         <div>
-          <strong>{{repository.full_name}}</strong>
-          <p>{{repository.description}}</p>
+          <strong>{{ repository.full_name }}</strong>
+          <p>{{ repository.description }}</p>
         </div>
       </header>
       <ul>
         <li>
-          <strong>{{repository.stargazers_count}}</strong>
+          <strong>{{ repository.stargazers_count }}</strong>
           <span>Stars</span>
         </li>
         <li>
-          <strong>{{repository.forks_count}}</strong>
+          <strong>{{ repository.forks_count }}</strong>
           <span>Forks</span>
         </li>
         <li>
-          <strong>{{repository.open_issues_count}}</strong>
+          <strong>{{ repository.open_issues_count }}</strong>
           <span>Issues abertas</span>
         </li>
       </ul>
     </RepositoryInfo>
 
     <Issues v-if="issues.length">
-      <a v-for="issue in issues" :key="issue.id" :href="issue.html_url">
+      <a
+        v-for="issue in issues"
+        :key="issue.id"
+        :href="issue.html_url"
+        target="_blank"
+      >
         <div>
           <strong>{{ issue.title }}</strong>
           <p>{{ issue.user.login }}</p>

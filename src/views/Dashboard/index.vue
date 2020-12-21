@@ -1,7 +1,9 @@
 <template>
   <div>
     <img :src="logo" alt="Github explorer logo" />
+
     <Title> Explore repositórios no Github. </Title>
+
     <Form @submit.prevent="handleSubmit" :hasError="hasError">
       <input placeholder="Digite o nome do repositório" v-model="search" />
       <button type="submit">Pesquisar</button>
@@ -24,6 +26,7 @@
     </Repositories>
   </div>
 </template>
+
 <script>
 import logo from '@/assets/logo.svg';
 import {
